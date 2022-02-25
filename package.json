@@ -1,0 +1,24 @@
+{
+  "name": "ozimnad-accordion",
+  "version": "1.0.0",
+  "description": "Simple JS Library for accordion",
+  "main": "src/ozimnad-accordion.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ozimnadius/ozimnad-accordion"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --mode development"
+  },
+  "keywords": [
+    "ozimnad",
+    "tabs"
+  ],
+  "author": "Ozimnadius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ozimnadius/ozimnad-accordion/issues"
+  },
+  "homepage": "https://github.com/Ozimnadius/ozimnad-accordion#readme"
+}
