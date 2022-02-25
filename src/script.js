@@ -10,8 +10,8 @@ class OzimnadAccordion{
         }
 
         Object.assign(this,def,options);
-
-        this.items = Array.from(document.querySelectorAll(this.selectorItem)).map((i)=>{
+        this.accordion = document.querySelector(this.selector);
+        this.items = Array.from(this.accordion.querySelectorAll(this.selectorItem)).map((i)=>{
            return new OzimnadAccordionItem({
                item: i,
                selectorBtn: this.selectorBtn,
