@@ -6,20 +6,28 @@ class OzimnadAccordion{
             selectorBtn: '[data-accordion="btn"]',
             selectorCollapse: '[data-accordion="collapse"]',
             selectorContent: '[data-accordion="content"]',
-            activeIndex: 0
+            activeIndex: 0,
+            openAll: false
         }
 
         Object.assign(this,def,options);
         this.accordion = document.querySelector(this.selector);
         this.items = Array.from(this.accordion.querySelectorAll(this.selectorItem)).map((i)=>{
-           return new OzimnadAccordionItem({
+
+           let item = new OzimnadAccordionItem({
                item: i,
                selectorBtn: this.selectorBtn,
                selectorCollapse: this.selectorCollapse,
                selectorContent: this.selectorContent
            });
-        });
 
+           if (this.openAll){
+               item.open();
+           }
+
+           return item;
+
+        });
     }
 }
 
