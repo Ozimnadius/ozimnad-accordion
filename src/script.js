@@ -20,8 +20,6 @@ class OzimnadAccordion{
            });
         });
 
-        console.log(this.items);
-
     }
 }
 
