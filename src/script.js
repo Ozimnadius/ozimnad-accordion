@@ -41,10 +41,10 @@ class OzimnadAccordionItem{
 
         this.active = false;
 
-        this.#init();
+        this.init();
     }
 
-    #init(){
+    init(){
         this.btn.addEventListener('click', this.click);
 
     }
