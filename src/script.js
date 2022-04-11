@@ -1,4 +1,4 @@
-class OzimnadAccordion{
+class OzimnadAccordion {
     constructor(options) {
         let def = {
             selector: '[data-accordion="accordion"]',
@@ -10,30 +10,32 @@ class OzimnadAccordion{
             openAll: false
         }
 
-        Object.assign(this,def,options);
+        Object.assign(this, def, options);
         this.accordion = document.querySelector(this.selector);
-        this.items = Array.from(this.accordion.querySelectorAll(this.selectorItem)).map((i)=>{
+        if (this.accordion) {
+            this.items = Array.from(this.accordion.querySelectorAll(this.selectorItem)).map((i) => {
 
-           let item = new OzimnadAccordionItem({
-               item: i,
-               selectorBtn: this.selectorBtn,
-               selectorCollapse: this.selectorCollapse,
-               selectorContent: this.selectorContent
-           });
+                let item = new OzimnadAccordionItem({
+                    item: i,
+                    selectorBtn: this.selectorBtn,
+                    selectorCollapse: this.selectorCollapse,
+                    selectorContent: this.selectorContent
+                });
 
-           if (this.openAll){
-               item.open();
-           }
+                if (this.openAll) {
+                    item.open();
+                }
 
-           return item;
+                return item;
 
-        });
+            });
+        }
     }
 }
 
-class OzimnadAccordionItem{
+class OzimnadAccordionItem {
     constructor(options) {
-        Object.assign(this,options);
+        Object.assign(this, options);
 
         this.btn = this.item.querySelector(this.selectorBtn);
         this.collapse = this.item.querySelector(this.selectorCollapse);
@@ -44,12 +46,12 @@ class OzimnadAccordionItem{
         this.init();
     }
 
-    init(){
+    init() {
         this.btn.addEventListener('click', this.click);
 
     }
 
-    get height(){
+    get height() {
         return this.content.offsetHeight;
     }
 
