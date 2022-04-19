@@ -1,6 +1,6 @@
 {
   "name": "ozimnad-accordion",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Simple JS Library for accordion",
   "main": "src/ozimnad-accordion.js",
   "repository": {

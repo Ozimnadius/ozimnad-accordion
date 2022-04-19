@@ -11,7 +11,13 @@ class OzimnadAccordion {
         }
 
         Object.assign(this, def, options);
-        this.accordion = document.querySelector(this.selector);
+
+        if (typeof this.selector ==='string'){
+            this.accordion = document.querySelector(this.selector);
+        } else{
+            this.accordion = this.selector;
+        }
+
         if (this.accordion) {
             this.items = Array.from(this.accordion.querySelectorAll(this.selectorItem)).map((i) => {
 
